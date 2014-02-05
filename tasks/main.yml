@@ -2,6 +2,3 @@
 
 ---
 - include: common.yml
-- include: python_packages.yml
-- include: the_silver_searcher.yml
-- include: vim.yml

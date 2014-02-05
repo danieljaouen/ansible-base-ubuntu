@@ -12,6 +12,7 @@ base_ubuntu:
       - ppa:pitti/postgresql
 
     absent_packages:
+      - git
       - gvim
       - ruby1.8
       - vim
@@ -82,6 +83,7 @@ base_ubuntu:
       - swig
       - tmux
       - unzip
+      - vim-nox
       - zlib1g-dev
       - zsh
 

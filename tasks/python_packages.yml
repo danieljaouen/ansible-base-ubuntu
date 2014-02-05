@@ -1,9 +1,0 @@
-# file: ansible/roles/base_ubuntu/tasks/main.yml
-
----
-- name: base_ubuntu | python_packages | easy_install pip
-  easy_install: name=pip
-
-- name: base_ubuntu | python_packages | pip base_ubuntu.python_packages.requirements
-  pip: name=$item state=present
-  with_items: base_ubuntu.python_packages.requirements
