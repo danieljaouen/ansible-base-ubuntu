@@ -21,9 +21,12 @@
 - name: base_ubuntu | common | aptitude install curl
   apt: name=curl state=present
 
-- name: base_ubuntu | common | apt_get purge absent_packages
+- name: base_ubuntu | common | apt-get purge absent_packages
   apt: name={{ item }} state=absent
   with_items: base_ubuntu.common.absent_packages
+
+- name: base_ubuntu | common | apt-get install git
+  apt: name=git state=present
 
 # source packages --------------------------------------------------------- {{{
 - name: base_ubuntu | common | curl source_packages.tar
