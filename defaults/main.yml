@@ -2,16 +2,56 @@
 
 ---
 base_ubuntu:
-  # common ---------------------------------------------------------------- {{{
   common:
-    # packages ----------------------------------------------------- {{{
-    packages:
+    apt_repositories:
+      - ppa:git-core/ppa
+      - ppa:chris-lea/node.js
+      - ppa:chris-lea/redis-server
+      - ppa:nmi/vim-snapshots
+      - ppa:nginx/stable
+      - ppa:pitti/postgresql
+
+    absent_packages:
+      - gvim
+      - ruby1.8
+      - vim
+      - vim-common
+      - vim-gui-common
+      - vim-runtime
+      - vim-tiny
+
+    source_packages:
+      tar:
+        - name: ruby
+          full_name: ruby-2.0.0-p353
+          directory: /tmp/ruby-2.0.0-p353
+          src: ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz
+          configure_command: ./configure --disable-install-rdoc
+          configure_creates: /tmp/ruby-2.0.0-p353/Makefile
+          make_command: make
+          make_creates: /tmp/ruby-2.0.0-p353/ruby
+          make_install_command: make install
+          make_install_creates: /usr/local/bin/ruby
+      git:
+        - name: the_silver_searcher
+          full_name: the_silver_searcher
+          directory: /tmp/the_silver_searcher
+          src: git://github.com/ggreer/the_silver_searcher.git
+          configure_command: ./build.sh
+          configure_creates: /tmp/the_silver_searcher/Makefile
+          make_command: make
+          make_creates: /tmp/the_silver_searcher/ag
+          make_install_command: make install
+          make_install_creates: /usr/local/bin/ag
+
+    apt_packages:
       - ack-grep
       - automake
       - build-essential
       - cmake
       - coreutils
       - exuberant-ctags
+      - fish
       - git
       - graphviz
       - htop
@@ -39,42 +79,20 @@ base_ubuntu:
       - pkg-config
       - python-dev
       - python-setuptools
-      - ruby-dev
       - swig
       - tmux
       - unzip
       - zlib1g-dev
       - zsh
-    # /packages ---------------------------------------------------- }}}
 
-    # absent ------------------------------------------------------- {{{
-    absent:
-      - gvim
-      - vim
-      - vim-common
-      - vim-gui-common
-      - vim-runtime
-      - vim-tiny
-    # /absent ------------------------------------------------------ }}}
-
-    # services ----------------------------------------------------- {{{
-    services:
-      - mysql
-      - nginx
-      - uwsgi
-      - varnish
-    # /services ---------------------------------------------------- }}}
-  # /common --------------------------------------------------------------- }}}
-
-  # python_packages ------------------------------------------------------- {{{
   python_packages:
-    # requirements ------------------------------------------------- {{{
     requirements:
       - Fabric
       - boto
       - bpython
       - dulwich
       - flake8
+      - glances
       - httpie
       - mercurial
       - pip-tools
@@ -83,21 +101,3 @@ base_ubuntu:
       - uWSGI
       - virtualenv
       - virtualenvwrapper
-    # /requirements ------------------------------------------------ }}}
-  # /python_packages ------------------------------------------------------ }}}
-
-  # the_silver_searcher -------------------------------------------- {{{
-  the_silver_searcher:
-    repo: "git://github.com/ggreer/the_silver_searcher.git"
-    dest: /root/the_silver_searcher
-    executable: /usr/local/bin/ag
-  # /the_silver_searcher ------------------------------------------- }}}
-
-  # vim ------------------------------------------------------------ {{{
-  vim:
-    repo: "https://code.google.com/p/vim/"
-    dest: /root/vim
-    prefix: /usr
-    runtimedir: /usr/share/vim/vim74
-    executable: /usr/bin/vim
-  # /vim ----------------------------------------------------------- }}}

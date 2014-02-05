@@ -1,4 +1,4 @@
-# file: ansible/roles/base_ubuntu/tasks/main.yml
+# file: base_ubuntu/tasks/main.yml
 
 ---
 - include: common.yml

@@ -1,4 +1,4 @@
-# file: ansible/roles/base_ubuntu/tasks/the_silver_searcher.yml
+# file: base_ubuntu/tasks/the_silver_searcher.yml
 
 ---
 - name: base_ubuntu | the_silver_searcher | git clone the_silver_searcher
