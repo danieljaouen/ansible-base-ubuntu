@@ -10,6 +10,7 @@ base_ubuntu:
       - ppa:nmi/vim-snapshots
       - ppa:nginx/stable
       - ppa:pitti/postgresql
+      - ppa:fish-shell/nightly-master
 
     absent_packages:
       - git
