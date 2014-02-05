@@ -1,0 +1,16 @@
+# file: ansible/roles/base_ubuntu/tasks/common.yml
+
+---
+- name: base_ubuntu | common | aptitude update
+  apt: update_cache=yes
+
+- name: base_ubuntu | common | apt_get install python_software_properties
+  apt: name=python-software-properties state=present
+
+- name: base_ubuntu | common | apt_get install packages
+  apt: pkg=$item state=present
+  with_items: base_ubuntu.common.packages
+
+- name: base_ubuntu | common | apt_get purge absent
+  apt: name=$item state=absent
+  with_items: base_ubuntu.common.absent

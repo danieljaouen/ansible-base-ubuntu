@@ -1,0 +1,103 @@
+# file: ansible/roles/base_ubuntu/defaults/main.yml
+
+---
+base_ubuntu:
+  # common ---------------------------------------------------------------- {{{
+  common:
+    # packages ----------------------------------------------------- {{{
+    packages:
+      - ack-grep
+      - automake
+      - build-essential
+      - cmake
+      - coreutils
+      - exuberant-ctags
+      - git
+      - graphviz
+      - htop
+      - libatk1.0-dev
+      - libbonoboui2-dev
+      - libcairo2-dev
+      - libdbd-mysql-perl
+      - libdbi-perl
+      - libevent-dev
+      - libgeos-dev
+      - libgraphviz-dev
+      - liblzma-dev
+      - libncurses5-dev
+      - libpcre3-dev
+      - libssl-dev
+      - libxml2-dev
+      - libxpm-dev
+      - libxslt1-dev
+      - libxt-dev
+      - make
+      - mtr
+      - ncdu
+      - nmap
+      - openssl
+      - pkg-config
+      - python-dev
+      - python-setuptools
+      - ruby-dev
+      - swig
+      - tmux
+      - unzip
+      - zlib1g-dev
+      - zsh
+    # /packages ---------------------------------------------------- }}}
+
+    # absent ------------------------------------------------------- {{{
+    absent:
+      - gvim
+      - vim
+      - vim-common
+      - vim-gui-common
+      - vim-runtime
+      - vim-tiny
+    # /absent ------------------------------------------------------ }}}
+
+    # services ----------------------------------------------------- {{{
+    services:
+      - mysql
+      - nginx
+      - uwsgi
+      - varnish
+    # /services ---------------------------------------------------- }}}
+  # /common --------------------------------------------------------------- }}}
+
+  # python_packages ------------------------------------------------------- {{{
+  python_packages:
+    # requirements ------------------------------------------------- {{{
+    requirements:
+      - Fabric
+      - boto
+      - bpython
+      - dulwich
+      - flake8
+      - httpie
+      - mercurial
+      - pip-tools
+      - see
+      - six
+      - uWSGI
+      - virtualenv
+      - virtualenvwrapper
+    # /requirements ------------------------------------------------ }}}
+  # /python_packages ------------------------------------------------------ }}}
+
+  # the_silver_searcher -------------------------------------------- {{{
+  the_silver_searcher:
+    repo: "git://github.com/ggreer/the_silver_searcher.git"
+    dest: /root/the_silver_searcher
+    executable: /usr/local/bin/ag
+  # /the_silver_searcher ------------------------------------------- }}}
+
+  # vim ------------------------------------------------------------ {{{
+  vim:
+    repo: "https://code.google.com/p/vim/"
+    dest: /root/vim
+    prefix: /usr
+    runtimedir: /usr/share/vim/vim74
+    executable: /usr/bin/vim
+  # /vim ----------------------------------------------------------- }}}
