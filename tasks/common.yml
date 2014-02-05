@@ -28,6 +28,10 @@
 - name: base_ubuntu | common | apt-get install git
   apt: name=git state=present
 
+- name: base_ubuntu | common | apt_get install apt_packages
+  apt: pkg={{ item }} state=present
+  with_items: base_ubuntu.common.apt_packages
+
 # source packages --------------------------------------------------------- {{{
 - name: base_ubuntu | common | curl source_packages.tar
   shell: "curl {{ item.src }} | tar xz chdir=/tmp creates={{ item.directory }}"
@@ -61,10 +65,6 @@
   command: "{{ item.make_install_command }} chdir={{ item.directory }} creates={{ item.make_install_creates }}"
   with_items: base_ubuntu.common.source_packages.git
 # /source packages -------------------------------------------------------- }}}
-
-- name: base_ubuntu | common | apt_get install apt_packages
-  apt: pkg={{ item }} state=present
-  with_items: base_ubuntu.common.apt_packages
 
 # python packages --------------------------------------------------------- {{{
 - name: base_ubuntu | common | easy_install pip
