@@ -74,3 +74,8 @@
   pip: name={{ item }} state=present
   with_items: base_ubuntu.python_packages.requirements
 # /python packages -------------------------------------------------------- }}}
+
+# ruby gems --------------------------------------------------------------- {{{
+- name: base_ubuntu | common | gem install bundler
+  command: /usr/local/bin/gem install bundler creates=/usr/local/bin/bundle
+# /ruby gems -------------------------------------------------------------- }}}
