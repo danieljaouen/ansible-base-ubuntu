@@ -1,5 +1,5 @@
-Role Name
-========
+base_ubuntu
+===========
 
 A role to set up a base Ubuntu instance.
 
