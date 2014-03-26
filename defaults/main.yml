@@ -27,6 +27,7 @@ base_ubuntu:
       - ack-grep
       - automake
       - build-essential
+      - bzip2
       - cmake
       - coreutils
       - exuberant-ctags
@@ -46,11 +47,13 @@ base_ubuntu:
       - libncurses5-dev
       - libpcre3-dev
       - libreadline-dev
+      - libsqlite-dev
       - libssl-dev
       - libxml2-dev
       - libxpm-dev
       - libxslt1-dev
       - libxt-dev
+      - libzip-dev
       - make
       - mtr
       - ncdu
@@ -59,6 +62,7 @@ base_ubuntu:
       - pkg-config
       - python-dev
       - python-setuptools
+      - sqlite
       - swig
       - tmux
       - unzip
