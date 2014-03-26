@@ -4,13 +4,14 @@
 base_ubuntu:
   common:
     apt_repositories:
-      - ppa:git-core/ppa
       - ppa:chris-lea/node.js
       - ppa:chris-lea/redis-server
-      - ppa:nmi/vim-snapshots
-      - ppa:nginx/stable
-      - ppa:pitti/postgresql
       - ppa:fish-shell/nightly-master
+      - ppa:git-core/ppa
+      - ppa:gophers/go
+      - ppa:nginx/stable
+      - ppa:nmi/vim-snapshots
+      - ppa:pitti/postgresql
 
     absent_packages:
       - git
