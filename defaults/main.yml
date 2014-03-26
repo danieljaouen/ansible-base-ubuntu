@@ -37,6 +37,7 @@ base_ubuntu:
       - htop
       - libatk1.0-dev
       - libbonoboui2-dev
+      - libbz2-dev
       - libcairo2-dev
       - libdbd-mysql-perl
       - libdbi-perl
