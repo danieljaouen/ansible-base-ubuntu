@@ -4,6 +4,8 @@
 base_ubuntu:
   common:
     apt_repositories:
+      - 'deb http://packages.dotdeb.org wheezy all'
+      - 'deb-src http://packages.dotdeb.org wheezy all'
       - ppa:chris-lea/node.js
       - ppa:chris-lea/redis-server
       - ppa:fish-shell/nightly-master
@@ -12,6 +14,9 @@ base_ubuntu:
       - ppa:nginx/stable
       - ppa:nmi/vim-snapshots
       - ppa:pitti/postgresql
+
+    apt_keys:
+      - http://www.dotdeb.org/dotdeb.gpg
 
     absent_packages:
       - git
