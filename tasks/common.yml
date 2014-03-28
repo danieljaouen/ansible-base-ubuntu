@@ -8,11 +8,11 @@
   apt: name=python-software-properties state=present
 
 - name: common | add-apt-repository apt_repositories
-  apt_repository: repo={{ item }} state=present
+  apt_repository: "repo='{{ item }}' state=present"
   with_items: base_ubuntu.common.apt_repositories
 
 - name: common | add-apt-key apt_keys
-  apt_key: url={{ item }} state=present
+  apt_key: "url='{{ item }}' state=present"
   with_items: base_ubuntu.common.apt_keys
 
 - name: common | aptitude update
