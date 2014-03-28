@@ -68,6 +68,7 @@ base_ubuntu:
       - tmux
       - unzip
       - vim-nox
+      - vnstat
       - zlib1g-dev
       - zsh
 
