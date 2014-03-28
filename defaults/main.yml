@@ -4,8 +4,8 @@
 base_ubuntu:
   common:
     apt_repositories:
-      - 'deb http://packages.dotdeb.org wheezy all'
-      - 'deb-src http://packages.dotdeb.org wheezy all'
+      - 'deb http://packages.dotdeb.org stable all'
+      - 'deb-src http://packages.dotdeb.org stable all'
       - ppa:chris-lea/node.js
       - ppa:chris-lea/redis-server
       - ppa:fish-shell/nightly-master
