@@ -112,6 +112,7 @@ base_ubuntu:
       - httpie
       - mercurial
       - pip-tools
+      - psdash
       - psutil
       - see
       - six
