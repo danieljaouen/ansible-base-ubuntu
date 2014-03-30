@@ -112,6 +112,7 @@ base_ubuntu:
       - httpie
       - mercurial
       - pip-tools
+      - psutil
       - see
       - six
       - uWSGI
