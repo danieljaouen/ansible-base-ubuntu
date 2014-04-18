@@ -78,17 +78,17 @@ base_ubuntu:
       - zsh
 
     source_packages:
-      tar:
-        - name: ruby
-          full_name: ruby-2.0.0-p353
-          directory: /tmp/ruby-2.0.0-p353
-          src: ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz
-          configure_command: ./configure --disable-install-rdoc
-          configure_creates: /tmp/ruby-2.0.0-p353/Makefile
+      hg:
+        - name: vim
+          full_name: vim
+          directory: /tmp/vim
+          src: https://code.google.com/p/vim/
+          configure_command: ./configure --with-features=huge --enable-rubyinterp --enable-pythoninterp --enable-cscope
+          configure_creates: /tmp/vim/src/auto/config.mk
           make_command: make
-          make_creates: /tmp/ruby-2.0.0-p353/ruby
+          make_creates: /tmp/vim/src/vim
           make_install_command: make install
-          make_install_creates: /usr/local/bin/ruby
+          make_install_creates: /usr/local/bin/vim
       git:
         - name: the_silver_searcher
           full_name: the_silver_searcher
@@ -100,6 +100,17 @@ base_ubuntu:
           make_creates: /tmp/the_silver_searcher/ag
           make_install_command: make install
           make_install_creates: /usr/local/bin/ag
+      tar:
+        - name: ruby
+          full_name: ruby-2.0.0-p353
+          directory: /tmp/ruby-2.0.0-p353
+          src: ftp://ftp.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz
+          configure_command: ./configure --disable-install-rdoc
+          configure_creates: /tmp/ruby-2.0.0-p353/Makefile
+          make_command: make
+          make_creates: /tmp/ruby-2.0.0-p353/ruby
+          make_install_command: make install
+          make_install_creates: /usr/local/bin/ruby
 
   python_packages:
     requirements:
