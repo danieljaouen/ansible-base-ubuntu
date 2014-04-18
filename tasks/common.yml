@@ -1,8 +1,9 @@
 # file: base_ubuntu/tasks/common.yml
 
 ---
-- name: common | aptitude upgrade
-  apt: update_cache=yes upgrade=yes
+- name: common | aptitude purge absent_packages
+  apt: name={{ item }} state=absent
+  with_items: base_ubuntu.common.absent_packages
 
 - name: common | apt_get install python_software_properties
   apt: name=python-software-properties state=present
@@ -15,19 +16,11 @@
   apt_key: "url='{{ item }}' state=present"
   with_items: base_ubuntu.common.apt_keys
 
-- name: common | aptitude update
-  apt: update_cache=yes
-
-- name: common | aptitude purge absent_packages
-  apt: name={{ item }} state=absent
-  with_items: base_ubuntu.common.absent_packages
+- name: common | aptitude upgrade
+  apt: update_cache=yes upgrade=yes
 
 - name: common | aptitude install curl
   apt: name=curl state=present
-
-- name: common | apt-get purge absent_packages
-  apt: name={{ item }} state=absent
-  with_items: base_ubuntu.common.absent_packages
 
 - name: common | apt-get install git
   apt: name=git state=present
