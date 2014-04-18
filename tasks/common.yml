@@ -90,5 +90,5 @@
 
 # ruby gems --------------------------------------------------------------- {{{
 - name: common | gem install bundler
-  command: /usr/local/bin/gem install bundler creates=/usr/local/bin/bundle
+  command: gem install bundler creates=/usr/local/bin/bundle
 # /ruby gems -------------------------------------------------------------- }}}
