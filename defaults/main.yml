@@ -10,10 +10,10 @@ base_ubuntu:
       - ppa:chris-lea/redis-server
       - ppa:fish-shell/nightly-master
       - ppa:git-core/ppa
-      - ppa:gophers/go
+      # - ppa:gophers/go
       - ppa:nginx/stable
-      - ppa:nmi/vim-snapshots
-      - ppa:pitti/postgresql
+      # - ppa:nmi/vim-snapshots
+      # - ppa:pitti/postgresql
 
     apt_keys:
       - http://www.dotdeb.org/dotdeb.gpg
