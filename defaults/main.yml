@@ -46,8 +46,8 @@ base_ubuntu:
       - figlet
       - fish
       - fortune
-      - git
       - gfortran
+      - git
       - graphviz
       - htop
       - imagemagick
