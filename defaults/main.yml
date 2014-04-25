@@ -30,17 +30,28 @@ base_ubuntu:
 
     apt_packages:
       - ack-grep
+      - aspell
+      - aspell-en
       - automake
       - build-essential
       - bzip2
+      - cloc
       - cmake
       - coreutils
+      - cowsay
       - curl
+      - exiftool
       - exuberant-ctags
+      - fdupes
+      - figlet
       - fish
+      - fortune
       - git
+      - gfortran
       - graphviz
       - htop
+      - imagemagick
+      - irssi
       - libatk1.0-dev
       - libbonoboui2-dev
       - libbz2-dev
@@ -62,9 +73,12 @@ base_ubuntu:
       - libxt-dev
       - libzip-dev
       - make
+      - msmtp
       - mtr
       - ncdu
       - nmap
+      - notmuch
+      - offlineimap
       - openssl
       - pkg-config
       - python-dev
@@ -73,6 +87,7 @@ base_ubuntu:
       - silversearcher-ag
       - sqlite
       - swig
+      - task
       - tmux
       - unzip
       - vim-nox
