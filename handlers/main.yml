@@ -3,6 +3,3 @@
 ---
 - name: "base_ubuntu | handlers | aptitude update"
   apt: update_cache=yes
-
-- name: handlers | service postgresql restart
-  service: name=postgresql state=restarted

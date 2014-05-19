@@ -3,13 +3,6 @@
 ---
 base_ubuntu:
   common:
-    templates:
-      - src: etc/postgresql/9.3/main/pg_hba.conf
-        dest: "{{ directories.etc }}/postgresql/9.3/main/pg_hba.conf"
-        owner: root
-        group: root
-        mode: '0644'
-
     apt_repositories:
       # - 'deb http://packages.dotdeb.org stable all'
       # - 'deb-src http://packages.dotdeb.org stable all'
@@ -88,8 +81,6 @@ base_ubuntu:
       - offlineimap
       - openssl
       - pkg-config
-      - postgresql
-      - postgresql-server-dev-9.3
       - python-dev
       - python-pip
       - python-setuptools
