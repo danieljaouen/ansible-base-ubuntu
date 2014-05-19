@@ -81,6 +81,8 @@ base_ubuntu:
       - offlineimap
       - openssl
       - pkg-config
+      - postgresql
+      - postgresql-server-dev-9.3
       - python-dev
       - python-pip
       - python-setuptools
@@ -142,6 +144,7 @@ base_ubuntu:
       - mercurial
       - pip-tools
       # - psdash
+      - psycopg2
       - psutil
       - see
       - six
