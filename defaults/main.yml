@@ -142,7 +142,6 @@ base_ubuntu:
       - mercurial
       - pip-tools
       # - psdash
-      - psycopg2
       - psutil
       - see
       - six
