@@ -40,7 +40,6 @@ base_ubuntu:
       - coreutils
       - cowsay
       - curl
-      - exiftool
       - exuberant-ctags
       - fdupes
       - figlet
