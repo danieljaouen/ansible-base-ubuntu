@@ -89,6 +89,7 @@ base_ubuntu:
       - swig
       - task
       - tmux
+      - unattended-upgrades
       - unzip
       - vim-nox
       - vnstat
