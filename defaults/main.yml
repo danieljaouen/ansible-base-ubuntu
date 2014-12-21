@@ -98,13 +98,13 @@ base_ubuntu:
     source_packages:
       tar:
         - name: ruby
-          full_name: ruby-2.1.2
-          directory: /tmp/ruby-2.1.2
-          src: ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz
+          full_name: ruby-2.1.5
+          directory: /tmp/ruby-2.1.5
+          src: ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz
           configure_command: ./configure --disable-install-rdoc
-          configure_creates: /tmp/ruby-2.1.2/Makefile
+          configure_creates: /tmp/ruby-2.1.5/Makefile
           make_command: make
-          make_creates: /tmp/ruby-2.1.2/ruby
+          make_creates: /tmp/ruby-2.1.5/ruby
           make_install_command: make install
           make_install_creates: /usr/local/bin/ruby
       # hg:
