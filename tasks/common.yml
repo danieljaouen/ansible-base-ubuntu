@@ -5,6 +5,9 @@
 #   apt: name={{ item }} state=absent
 #   with_items: base_ubuntu.common.absent_packages
 
+- name: common | apt_get update
+  apt: update_cache=yes
+
 - name: common | apt_get install python_software_properties
   apt: name=python-software-properties state=present
 
