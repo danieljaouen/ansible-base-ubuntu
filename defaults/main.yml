@@ -4,29 +4,14 @@
 base_ubuntu:
   common:
     apt_repositories:
-      # - 'deb http://packages.dotdeb.org stable all'
-      # - 'deb-src http://packages.dotdeb.org stable all'
       - ppa:chris-lea/node.js
       - ppa:chris-lea/redis-server
       - ppa:fish-shell/nightly-master
       - ppa:git-core/ppa
-      # - ppa:gophers/go
       - ppa:nginx/stable
-      # - ppa:nmi/vim-snapshots
-      # - ppa:pitti/postgresql
 
     apt_keys:
       - http://www.dotdeb.org/dotdeb.gpg
-
-    # absent_packages:
-    #   - git
-    #   - gvim
-    #   - ruby1.8
-    #   - vim
-    #   - vim-common
-    #   - vim-gui-common
-    #   - vim-runtime
-    #   - vim-tiny
 
     apt_packages:
       - ack-grep
@@ -107,28 +92,6 @@ base_ubuntu:
           make_creates: /tmp/ruby-2.1.5/ruby
           make_install_command: make install
           make_install_creates: /usr/local/bin/ruby
-      # hg:
-      #   - name: vim
-      #     full_name: vim
-      #     directory: /tmp/vim
-      #     src: https://code.google.com/p/vim/
-      #     configure_command: ./configure --with-features=huge --enable-rubyinterp --enable-pythoninterp --enable-cscope
-      #     configure_creates: /tmp/vim/src/auto/config.mk
-      #     make_command: make
-      #     make_creates: /tmp/vim/src/vim
-      #     make_install_command: make install
-      #     make_install_creates: /usr/local/bin/vim
-      # git:
-      #   - name: the_silver_searcher
-      #     full_name: the_silver_searcher
-      #     directory: /tmp/the_silver_searcher
-      #     src: git://github.com/ggreer/the_silver_searcher.git
-      #     configure_command: ./build.sh
-      #     configure_creates: /tmp/the_silver_searcher/Makefile
-      #     make_command: make
-      #     make_creates: /tmp/the_silver_searcher/ag
-      #     make_install_command: make install
-      #     make_install_creates: /usr/local/bin/ag
 
   python_packages:
     requirements:
@@ -137,11 +100,9 @@ base_ubuntu:
       - bpython
       - dulwich
       - flake8
-      # - glances
       - httpie
       - mercurial
       - pip-tools
-      # - psdash
       - psutil
       - see
       - six

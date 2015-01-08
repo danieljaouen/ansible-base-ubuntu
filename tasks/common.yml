@@ -1,10 +1,6 @@
 # file: base_ubuntu/tasks/common.yml
 
 ---
-# - name: common | aptitude purge absent_packages
-#   apt: name={{ item }} state=absent
-#   with_items: base_ubuntu.common.absent_packages
-
 - name: common | apt_get update
   apt: update_cache=yes
 
@@ -27,9 +23,6 @@
   with_items: base_ubuntu.common.apt_packages
 
 # python packages --------------------------------------------------------- {{{
-# - name: common | easy_install pip
-#   easy_install: name=pip
-
 - name: common | pip install python_packages.requirements
   pip: name={{ item }} state=present
   with_items: base_ubuntu.python_packages.requirements
@@ -51,38 +44,6 @@
 - name: common | make install source_packages.tar
   command: "{{ item.make_install_command }} chdir={{ item.directory }} creates={{ item.make_install_creates }}"
   with_items: base_ubuntu.common.source_packages.tar
-#
-# - name: common | hg clone source_packages.hg
-#   hg: repo={{ item.src }} dest={{ item.directory }}
-#   with_items: base_ubuntu.common.source_packages.hg
-#
-# - name: common | ./configure source_packages.hg
-#   command: "{{ item.configure_command }} chdir={{ item.directory }} creates={{ item.configure_creates }}"
-#   with_items: base_ubuntu.common.source_packages.hg
-#
-# - name: common | make source_packages.hg
-#   command: "{{ item.make_command }} chdir={{ item.directory }} creates={{ item.make_creates }}"
-#   with_items: base_ubuntu.common.source_packages.hg
-#
-# - name: common | make install source_packages.hg
-#   command: "{{ item.make_install_command }} chdir={{ item.directory }} creates={{ item.make_install_creates }}"
-#   with_items: base_ubuntu.common.source_packages.hg
-#
-# - name: common | git clone source_packages.git
-#   git: repo={{ item.src }} dest={{ item.directory }}
-#   with_items: base_ubuntu.common.source_packages.git
-#
-# - name: common | ./configure source_packages.git
-#   command: "{{ item.configure_command }} chdir={{ item.directory }} creates={{ item.configure_creates }}"
-#   with_items: base_ubuntu.common.source_packages.git
-#
-# - name: common | make source_packages.git
-#   command: "{{ item.make_command }} chdir={{ item.directory }} creates={{ item.make_creates }}"
-#   with_items: base_ubuntu.common.source_packages.git
-#
-# - name: common | make install source_packages.git
-#   command: "{{ item.make_install_command }} chdir={{ item.directory }} creates={{ item.make_install_creates }}"
-#   with_items: base_ubuntu.common.source_packages.git
 # # /source packages -------------------------------------------------------- }}}
 
 # ruby gems --------------------------------------------------------------- {{{
