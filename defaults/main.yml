@@ -3,6 +3,12 @@
 ---
 base_ubuntu:
   common:
+    templates:
+      - src: etc/hostname
+        dest: "{{ directories.etc }}/hostname"
+        owner: root
+        group: root
+        mode: '0644'
     apt_repositories:
       - ppa:chris-lea/node.js
       - ppa:chris-lea/redis-server

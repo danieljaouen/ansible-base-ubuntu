@@ -22,6 +22,13 @@
   apt: pkg={{ item }} state=latest
   with_items: base_ubuntu.common.apt_packages
 
+- name: common | cp templates
+  template: src={{ item.src }} dest={{ item.dest }} owner={{ item.owner }} group={{ item.group }} mode={{ item.mode }}
+  with_items: base_ubuntu.common.templates
+
+- name: "common | hostname {{ hostname }}"
+  command: "hostname -F /etc/hostname"
+
 # python packages --------------------------------------------------------- {{{
 - name: common | pip install python_packages.requirements
   pip: name={{ item }} state=present
