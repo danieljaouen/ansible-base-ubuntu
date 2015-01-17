@@ -15,6 +15,7 @@ base_ubuntu:
       - ppa:fish-shell/nightly-master
       - ppa:git-core/ppa
       - ppa:nginx/stable
+      - ppa:jon-severinsson/ffmpeg
 
     apt_keys:
       - http://www.dotdeb.org/dotdeb.gpg
