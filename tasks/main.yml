@@ -1,4 +1,4 @@
 # file: base_ubuntu/tasks/main.yml
 
 ---
-- include: common.yml
+- import_tasks: common.yml
